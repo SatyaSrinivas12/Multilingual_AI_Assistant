@@ -3,7 +3,7 @@ from src.speech import voice, llm,  text_to_speech
 
 def main():
     st.title("Multilingual AI Assistant")
-    if st.button("Ask anything"):
+    if st.button("click to start"):
         with st.spinner("Listining"):
             audio = voice()
             text=llm(audio)
