@@ -1,5 +1,6 @@
 import streamlit as st
 from src.speech import voice, llm,  text_to_speech
+import os
 
 def main():
     st.title("Multilingual AI Assistant")
