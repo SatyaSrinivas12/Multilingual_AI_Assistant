@@ -3,7 +3,11 @@ from src.speech import voice, llm,  text_to_speech
 
 def main():
     st.title("Multilingual AI Assistant")
-    if st.button("click to start"):
+    with st.sidebar:
+        GOOGLE_API_KEY = st.text_input("Enter your GOOGLE_API_KEY:")
+        if st.button("Enter"):
+            os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
+    if st.button("Click to start"):
         with st.spinner("Listining"):
             audio = voice()
             text=llm(audio)
