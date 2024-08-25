@@ -6,20 +6,17 @@ import os
 
 GOOGLE_API_KEY=os.environ.get("GOOGLE_API_KEY")
 
-def voice():
+def upload_audio():
     src=sr.Recognizer()
-
-    with  sr.Microphone() as source:
-        print("Listening ...")
-        audio=src.listen(source)
-    try:
-        text=src.recognize_google(audio)
+    file_path="uploaded_audio.wav"
+    with sr.AudioFile(file_path) as source:
+        audio_data = sr.record(source)
+    try:    
+        text=src.recognize_google(audio_data)
         print("You said",text)
         return text
     except sr.UnknownValueError:
         print("Sorry, I could not understand you")
-    except  sr.RequestError as e:
-        print("Could not request results; {0}".format(e))
 
 def llm(user_text):
     genai.configure(api_key=GOOGLE_API_KEY)
