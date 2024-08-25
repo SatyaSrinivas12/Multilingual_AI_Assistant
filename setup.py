@@ -5,5 +5,5 @@ setup(name="multilingual_ai_assistant",
       author='Satya Srinivas',
       packages=find_packages(),
 
-      python_requires=3.10
+      python_requires='>=3.10,<3.11',
       )
