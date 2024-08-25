@@ -1,2 +1,2 @@
 portaudio19-dev
-python-distutils
+python3-distutils
